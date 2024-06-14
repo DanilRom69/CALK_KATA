@@ -21,6 +21,17 @@ public class Main {
         String str1;
         str1 = sc.nextLine();
         String[] words = str1.split(" ");
+        if (words.length == 1 || words.length == 2){
+            try {
+                throw new NoNegativeNumbersException("строка не является математической операцией");
+            }
+            catch (Exception e) {
+                System.err.println(e.getMessage());
+                return;
+
+            }
+
+        }
         for (int i = 0; i < ARAB_ARRAY.length; i++) {
             if (ARAB_ARRAY[i].contentEquals(words[0])) {
                 rezultatarab1 = true;
